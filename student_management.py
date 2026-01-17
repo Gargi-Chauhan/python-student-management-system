@@ -14,7 +14,6 @@ CREATE TABLE IF NOT EXISTS students (
 """)
 conn.commit()
 
-# add student func
 def add_student():
     name = input("Enter student name: ")
     roll = input("Enter roll number: ")
@@ -24,7 +23,7 @@ def add_student():
     )
     conn.commit()
     print("✅ Student added successfully")
-# view student func 
+
 def view_students():
     cursor.execute("SELECT * FROM students")
     records = cursor.fetchall()
@@ -34,7 +33,7 @@ def view_students():
     else:
         for r in records:
             print(r)
-# menu driven loop
+
 def main():
     while True:
         print("\n--- Student Management System ---")
